@@ -9,7 +9,7 @@ const Navbar = () => {
   const {menus} = menu;
   console.log(menus[2].dropdown);
   return (
-  < div className = "navbar sticky top-0 z-50" >
+  < div className = "navbar sticky top-0 z-50 bg-base-200" >
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost md:hidden lg:hidden">

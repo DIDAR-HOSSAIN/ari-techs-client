@@ -4,7 +4,7 @@ const Service = ({service}) => {
     const {title, image, description} = service
     return (
         <div className="card glass">
-            <figure><img src={image} alt="car!"/></figure>
+            <figure><img className='w-full h-64' src={image} h-10 alt=""/></figure>
             <div className="card-body">
                 <h2 className="card-title">{title}</h2>
                 <p>{description}</p>

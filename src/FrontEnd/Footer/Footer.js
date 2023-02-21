@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../../src/AriTechsResource/Logo/logo-png.png'
+import logo from '../../../src/AriTechsResource/Logo/ari-techs-logo.jpg'
 
 const Footer = () => {
     return (
         <footer className="footer mt-4 p-10 bg-base-200 text-base-content">
         <div>
-            <img src={logo} alt=""  width={200} height={200}/>
+            <Link to={"/"}><img src={logo} alt=""  width={150} height={150}/></Link>
             <p>ARI Techs.<br/>Providing reliable tech since 2022</p>
         </div> 
         <div>

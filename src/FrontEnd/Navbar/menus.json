@@ -63,12 +63,12 @@
         {
             "id": "5",
             "title": "About",
-            "path": "/"
+            "path": "/about"
         },
         {
             "id": "6",
             "title": "Contact",
-            "path": "/"
+            "path": "/contact"
         }
     ]
 }
