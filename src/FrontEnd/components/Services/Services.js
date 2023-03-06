@@ -89,8 +89,8 @@ const Services = () => {
             </div>
 
                 <div className="p-4 -mt-52">
-                <div className="gap-4 rounded-lg grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-                style={{ backgroundImage: "url(" + bg3 + ")" }}
+                <div className="gap-8 rounded-lg grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-fixed"
+                style={{ backgroundImage: "url(" + bg3 + ")",  }}
                 >
 
                 {
