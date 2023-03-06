@@ -1,26 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import menu from './menus.json';
-import logo from '../../AriTechsResource/Logo/ari-techs-logo.jpg'
-import { Bars3Icon } from '@heroicons/react/24/solid'
+import logo from '../../AriTechsResource/Logo/logo-updated.jpg';
+import { Bars3Icon } from '@heroicons/react/24/solid';
+
 
 
 const Navbar = () => {
+
   const {menus} = menu;
   console.log(menus[2].dropdown);
   return (
-  < div className = "navbar sticky top-0 z-50 bg-base-200" >
+  < div className = "navbar sticky top-0 z-50 bg-blue-700" >
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost md:hidden lg:hidden">
         <Bars3Icon className = "h-12 w-12 text-black-500" />
       </label>
-      <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box font-bold w-52">
+      <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow rounded-box font-bold w-52">
         
           {/* main menu */}
       {menus.length >0 &&
           menus.map((menu)=> (
-      <li key={menu.id}>
+      <li className='text-white bg-red-500' key={menu.id}>
             <Link to={menu.path}>{menu.title}</Link>
 
             {/* Submenu */}
@@ -39,28 +41,39 @@ const Navbar = () => {
 
       </ul>
     </div>
-    <Link to={"/"} className=""><img src={logo} alt='' width={50} height={50} /></Link>
+    <Link to={"/"}><img className='h-20' src={logo} alt='' /></Link>
   </div>
-  <div className="navbar-center md:flex hidden lg:flex">
+  <div className="menuArea navbar-center md:flex hidden lg:flex">
     
     {/* main menu */}
-    <ul className="menu menu-horizontal px-1">
+    <ul className="menu menu-horizontal px-1 text-white">
       {menus.length >0 &&
           menus.map((menu)=> (
-      <li className='' key={menu.id}>
+      <li className="group inline-block relative" key={menu.id}>
             <Link to={menu.path}>{menu.title}</Link>
 
             {/* Submenu */}
             {menu?.dropdown?.length > 0 && (
-            <ul className="p-2 bg-red-500 text-white">
+            <ul className = "bg-red-500 text-white" >
               {menu?.dropdown?.map(dropdownMenu =>(
           <li className="" key={dropdownMenu.id}>
-                <Link to={dropdownMenu.path}>{dropdownMenu.title}</Link>
-                
+                <Link to={dropdownMenu.path}>{dropdownMenu.title}</Link> 
               </li>
               ))}
         </ul>
               )}
+
+            {/* Mega menu */}
+            {/* {menu?.megaMenus?.length > 0 && (
+            <ul id={styles.megaMenu} className="grid grid-cols-2 absolute hidden group-hover:block w-96">
+              {menu?.megaMenus?.map(megaMenu =>(
+              <li className='' key={megaMenu.id}>
+                <Link to={megaMenu.path}>{megaMenu.megaMenuTitle}</Link>
+                
+              </li>
+              ))}
+        </ul>
+              )} */}
       </li>
           ))}
     </ul>

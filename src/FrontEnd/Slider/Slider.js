@@ -48,7 +48,7 @@ timeRef.current = setTimeout(()=>{
 
     return (
       
-        <div className="carousel h-96 w-full">
+        <div className="carousel lg:h-96 sm:h-52 w-full">
           <div id="" className="carousel-item relative w-full">
           <img src= {sliderImg[currentIndex]} alt="" className="w-full" />
           <div className="absolute flex justify-between left-5 right-5 place-self-center">
