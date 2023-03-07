@@ -64,7 +64,7 @@ const Services = () => {
                 <div className="lg:w-4/12 mx-auto -mt-32">
                     <div className="card card-side bg-base-100 shadow-xl">
                         
-                    <div className="w-2/12">
+                    <div className="lg:w-2/12">
                         <hr class="w-28 h-1 mx-auto my-4 bg-black border-0 rounded md:my-10 dark:bg-gray-700" />
                     </div>
 

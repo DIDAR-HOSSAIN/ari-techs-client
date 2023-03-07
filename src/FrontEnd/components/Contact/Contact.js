@@ -8,12 +8,12 @@ const Contact = () => {
             <div className="mt-32 justify-self-center">
             <img className='object-center' src={contacHeaderImg} alt="" />
             <span className='flex items-center text-lg font-semibold mt-4'><MapPinIcon className="h-14 w-14 text-blue-500"/>
-            <p>SA-TOWER, GEC, Circle Panchlaish, Chattogram</p>
+            <p>706 Autumn ave, Brooklyn NY 11208</p>
             </span>
             <p className='text-2xl font-semibold mt-4'>Email Address</p>
             <p type="email" className='email'><a href="mailto:Aritechs@outlook.com">Aritechs@outlook.com</a></p>
             <span className='flex items-center text-lg font-semibold mt-4'><PhoneIcon className="h-8 w-8 text-blue-500"/>
-            <p>+18143008937</p>
+            <p>+856-263-8066</p>
             </span>
             </div>
             <div className="mt-32">

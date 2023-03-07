@@ -92,8 +92,10 @@ const Navbar = () => {
             <span className="badge">New</span>
           </Link>
         </li>
-        <li><Link to={""}>Settings</Link></li>
+        <li><Link to={""}>Login</Link></li>
+        <li><Link to={""}>Sign Up</Link></li>
         <li><Link to={""}>Logout</Link></li>
+        <li><Link to={""}>Settings</Link></li>
       </ul>
     </div>
   </div>
