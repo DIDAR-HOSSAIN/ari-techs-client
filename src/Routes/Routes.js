@@ -5,6 +5,8 @@ import Services from "../FrontEnd/components/Services/Services";
 import Slider from "../FrontEnd/Slider/Slider";
 import About from "../FrontEnd/components/About/About";
 import Contact from "../FrontEnd/components/Contact/Contact";
+import Login from "../BackEnd/Auth/User/Login/Login";
+import SignUp from "../BackEnd/Auth/User/SignUp/SignUp";
 
 
 const router = createBrowserRouter([
@@ -31,6 +33,14 @@ const router = createBrowserRouter([
             {
                 path: '/contact',
                 element: <Contact></Contact>
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/signup',
+                element: <SignUp></SignUp>
             }
         ]
     }

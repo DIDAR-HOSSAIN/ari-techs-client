@@ -61,14 +61,14 @@ const Services = () => {
             <div className="mt-4">
                 <img src={bg1} className="h-72 lg:h-[500px] w-full object-cover" alt=''/>
 
-                <div className="lg:w-4/12 mx-auto -mt-32">
+                <div className="lg:w-6/12 mx-auto -mt-32">
                     <div className="card card-side bg-base-100 shadow-xl">
                         
-                    <div className="lg:w-2/12">
-                        <hr class="w-28 h-1 mx-auto my-4 bg-black border-0 rounded md:my-10 dark:bg-gray-700" />
+                    <div className="lg:w-4/12">
+                        <hr className="w-28 h-1 mx-auto my-4 bg-black border-0 rounded md:my-10 dark:bg-gray-700" />
                     </div>
 
-                    <div className="card-body ">
+                    <div className="card-body">
                         <h1 className="card-title text-4xl">IT Consulting & Services</h1>
                         <p className='text-justify'>Welcome to ArITech! Our team of skilled and experienced IT professionals is dedicated to providing the highest quality services to meet all of your technology needs. Whether you are looking for IT consulting, software development, IT Services, network management, or any other IT services, we have the expertise and experience to help you achieve your goals. If you have any questions or need assistance, please do not hesitate to contact us. We look forward to working with you!</p>
                         <div className="card-actions justify-end">
@@ -88,7 +88,7 @@ const Services = () => {
             </div>
             </div>
 
-                <div className="p-4 -mt-52">
+                <div className="p-4 lg:-mt-52">
                 <div className="gap-8 rounded-lg grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-fixed"
                 style={{ backgroundImage: "url(" + bg3 + ")",  }}
                 >

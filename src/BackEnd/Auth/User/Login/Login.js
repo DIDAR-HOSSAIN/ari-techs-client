@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useLocation, useNavigate } from 'react-router-dom';
+import useToken from '../../../../hooks/useToken';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
-import useToken from '../../hooks/useToken';
 import GoogleLogin from '../SocialLogin/GoogleLogin';
-
 
 const Login = () => {
   const {login} = useContext(AuthContext);
@@ -13,7 +13,7 @@ const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const from = location.state?.from?.pathname || '/';
+  const from = location?.state?.from?.pathname || '/';
   if(token){
     navigate(from, {replace:true});
   }
@@ -69,7 +69,7 @@ const Login = () => {
               loginError && <p className='text-red-600'>{loginError}</p>
             }
      
-        <p className='text-secondary'>New to doctor portal?<a href="/register" className="label-text-alt link link-hover text-lg"> Create account</a></p>
+        <p className='text-secondary'>New to doctor portal?<Link to ="/signup" className="label-text-alt link link-hover text-lg"> Create account</Link></p>
       </div>
       <div className="divider mt-0">OR</div>
     </form>

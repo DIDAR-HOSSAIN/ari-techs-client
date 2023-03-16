@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
-import useToken from '../../hooks/useToken';
+import useToken from '../../../../hooks/useToken';
 import GoogleLogin from '../SocialLogin/GoogleLogin';
 
-const Register = () => {
+const SignUp = () => {
     const {createUser, updateUser} = useContext(AuthContext);
     const [signUpError, setSignUpError] = useState('');
     const [createdUserEmail, setCreatedUserEmail] = useState('');
@@ -95,7 +96,7 @@ return (
         {
           signUpError && <p className='text-red-600'>{signUpError}</p>
         }
-        <p className='text-secondary'>Already have an account?<a href="/login" className="label-text-alt link link-hover text-lg"> Please Login</a></p>
+        <p className='text-secondary'>Already have an account?<Link to ="/login" className="label-text-alt link link-hover text-lg"> Please Login</Link></p>
       </div>
     </form>
     <div className="divider mt-0">OR</div>
@@ -106,4 +107,4 @@ return (
     );
 };
 
-export default Register;
+export default SignUp;

@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import menu from './menus.json';
 import logo from '../../AriTechsResource/Logo/logo-updated.jpg';
 import { Bars3Icon } from '@heroicons/react/24/solid';
+import { AuthContext } from '../../BackEnd/Auth/contexts/AuthProvider/AuthProvider';
 
 
 
 const Navbar = () => {
+    const {menus} = menu;
+    console.log(menus[2].dropdown);
+    const {user, logout} = useContext(AuthContext);
 
-  const {menus} = menu;
-  console.log(menus[2].dropdown);
+    const handleLogout = ()=>{
+      logout()
+      .then()
+      .catch();
+    }
+
   return (
   < div className = "navbar sticky top-0 z-50 bg-blue-700" >
   <div className="navbar-start">
@@ -92,10 +100,19 @@ const Navbar = () => {
             <span className="badge">New</span>
           </Link>
         </li>
-        <li><Link to={""}>Login</Link></li>
-        <li><Link to={""}>Sign Up</Link></li>
-        <li><Link to={""}>Logout</Link></li>
-        <li><Link to={""}>Settings</Link></li>
+        
+        {user?.email ?
+        <>
+        <li><Link to={"/"} >User: {user?.email}</Link></li>     
+        <li><button onClick={handleLogout} >Logout</button></li>
+        </>
+        :
+        <>
+        <li><Link to={"/login"}>Login</Link></li>
+        <li><Link to={"/signup"}>Sign Up</Link></li>
+        </>
+        }     
+        <li><Link to={""}>Settings</Link></li>     
       </ul>
     </div>
   </div>
