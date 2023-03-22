@@ -7,12 +7,20 @@ import About from "../FrontEnd/components/About/About";
 import Contact from "../FrontEnd/components/Contact/Contact";
 import Login from "../BackEnd/Auth/User/Login/Login";
 import SignUp from "../BackEnd/Auth/User/SignUp/SignUp";
+import Dashboard from "../BackEnd/Dashboard/Dashboard";
+import DisplayError from "../DisplayError/DisplayError";
+import ManageBuyerRequest from "../BackEnd/BuyerRequest/ManageBuyerRequest";
+import AllUser from "../BackEnd/Auth/User/AllUser/AllUser";
+import PrivateRoutes from "./PrivateRoutes";
+import AdminRoutes from "./AdminRoutes";
+
 
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement: <DisplayError></DisplayError>,
         children: [
             {
                 path: '/',
@@ -41,6 +49,22 @@ const router = createBrowserRouter([
             {
                 path: '/signup',
                 element: <SignUp></SignUp>
+            }
+        ]
+    },
+
+    {
+        path: '/dashboard',
+        element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
+        errorElement: <DisplayError></DisplayError>,
+        children:[
+            {
+                path: '/dashboard',
+                element: <ManageBuyerRequest></ManageBuyerRequest>
+            },
+            {
+                path: '/dashboard/users',
+                element: <AdminRoutes><AllUser></AllUser></AdminRoutes>
             }
         ]
     }

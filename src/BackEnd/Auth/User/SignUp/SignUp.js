@@ -14,7 +14,7 @@ const SignUp = () => {
     const navigate = useNavigate();
 
     if(token){
-      navigate('/')
+      navigate('/');
     }
 
     const handleRegister = event =>{
@@ -59,11 +59,8 @@ const SignUp = () => {
       .then(res => res.json())
       .then(data=>{
         setCreatedUserEmail(email);
-
       })
     }
-
-
 
 return (
   <div className="hero">

@@ -1,7 +1,8 @@
 import React from 'react';
 import { useContext } from 'react';
 import { useNavigate, useRouteError } from 'react-router-dom';
-import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { AuthContext } from '../BackEnd/Auth/contexts/AuthProvider/AuthProvider';
+
 
 const DisplayError = () => {
     const {logout} = useContext(AuthContext);
