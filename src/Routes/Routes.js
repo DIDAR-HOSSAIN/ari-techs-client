@@ -4,15 +4,16 @@ import Main from "../FrontEnd/Layout/Main";
 import Services from "../FrontEnd/components/Services/Services";
 import Slider from "../FrontEnd/Slider/Slider";
 import About from "../FrontEnd/components/About/About";
-import Contact from "../FrontEnd/components/Contact/Contact";
 import Login from "../BackEnd/Auth/User/Login/Login";
 import SignUp from "../BackEnd/Auth/User/SignUp/SignUp";
 import Dashboard from "../BackEnd/Dashboard/Dashboard";
 import DisplayError from "../DisplayError/DisplayError";
-import ManageBuyerRequest from "../BackEnd/BuyerRequest/ManageBuyerRequest";
 import AllUser from "../BackEnd/Auth/User/AllUser/AllUser";
 import PrivateRoutes from "./PrivateRoutes";
 import AdminRoutes from "./AdminRoutes";
+import ManageContacts from "../FrontEnd/components/Contact/ManageContacts";
+import CreateContact from "../FrontEnd/components/Contact/CreateContact";
+import UpdateContact from "../FrontEnd/components/Contact/UpdateContact";
 
 
 
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/contact',
-                element: <Contact></Contact>
+                element: <CreateContact></CreateContact>
             },
             {
                 path: '/login',
@@ -60,7 +61,12 @@ const router = createBrowserRouter([
         children:[
             {
                 path: '/dashboard',
-                element: <ManageBuyerRequest></ManageBuyerRequest>
+                element: <ManageContacts></ManageContacts>
+            },
+            {
+                path: '/dashboard/update/:id',
+                element: <UpdateContact></UpdateContact>,
+                loader: ({params}) => fetch(`http://localhost:5000/contacts/${params.id}`)
             },
             {
                 path: '/dashboard/users',

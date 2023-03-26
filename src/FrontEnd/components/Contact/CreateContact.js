@@ -4,7 +4,7 @@ import { MapPinIcon, PhoneIcon } from '@heroicons/react/24/solid';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
-const Contact = () => {
+const CreateContact = () => {
 const navigate = useNavigate();
     const handleSubmit = event => {
             event.preventDefault();
@@ -13,28 +13,28 @@ const navigate = useNavigate();
             const email = form.email.value;
             const mobile = form.mobile.value;
             const message = form.message.value;
-            const messages = {name, email, mobile, message};
-            console.log(messages);
+            const contacts = {name, email, mobile, message};
+            console.log(contacts);
 
-            fetch('http://localhost:5000/messages', {
+            fetch('http://localhost:5000/contacts', {
                      method: 'POST',
                      headers: {
                          'content-type': 'application/json',
                          authorization: `bearer ${localStorage.getItem('accessToken')}`
                      },
-                     body: JSON.stringify(messages)
+                     body: JSON.stringify(contacts)
                  })
                  .then(res => res.json())
                 .then(result =>{
                     console.log(result);
-                    toast.success(`${name}, Message Added Successfully`);
+                    toast.success(`${name}, Request Added Successfully`);
                     navigate('/dashboard')
                 })
     }
 
     return (
-            <div className="w-full grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
-            <div className="mt-32 justify-self-center">
+            <div className="w-6/12 mx-auto">
+            {/* <div className="mt-32 justify-self-center">
             <img className='object-center' src={contacHeaderImg} alt="" />
             <span className='flex items-center text-lg font-semibold mt-4'><MapPinIcon className="h-14 w-14 text-blue-500"/>
             <p>706 Autumn ave, Brooklyn NY 11208</p>
@@ -44,7 +44,7 @@ const navigate = useNavigate();
             <span className='flex items-center text-lg font-semibold mt-4'><PhoneIcon className="h-8 w-8 text-blue-500"/>
             <p>+856-263-8066</p>
             </span>
-            </div>
+            </div> */}
             <div className="mt-32">
             <form onSubmit={handleSubmit} className=''>
             <input name="name" type="text" placeholder="Enter Your Name" className="input input-bordered input-lg w-full mb-2 max-w-full" />
@@ -62,4 +62,4 @@ const navigate = useNavigate();
     );
 };
 
-export default Contact;
+export default CreateContact;

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import menu from './menus.json';
-import logo from '../../AriTechsResource/Logo/logo-updated.jpg';
+import logo from '../../AriTechsResource/Logo/logo-transparent.png';
 import { Bars3Icon } from '@heroicons/react/24/solid';
 import { AuthContext } from '../../BackEnd/Auth/contexts/AuthProvider/AuthProvider';
 
@@ -19,7 +19,7 @@ const Navbar = () => {
     }
 
   return (
-  < div className = "navbar sticky top-0 z-50 bg-blue-700" >
+  <div className = "navbar sticky top-0 z-50 bg-white" >
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost md:hidden lg:hidden">
@@ -54,15 +54,15 @@ const Navbar = () => {
   <div className="menuArea navbar-center md:flex hidden lg:flex">
     
     {/* main menu */}
-    <ul className="menu menu-horizontal px-1 text-white">
+    <ul className="menu menu-horizontal px-1">
       {menus.length >0 &&
           menus.map((menu)=> (
-      <li className="group inline-block relative" key={menu.id}>
+      <li className="text-black font-semibold group inline-block relative" key={menu.id}>
             <Link to={menu.path}>{menu.title}</Link>
 
             {/* Submenu */}
             {menu?.dropdown?.length > 0 && (
-            <ul className = "bg-red-500 text-white" >
+            <ul className = "bg-red-500 text-black" >
               {menu?.dropdown?.map(dropdownMenu =>(
           <li className="" key={dropdownMenu.id}>
                 <Link to={dropdownMenu.path}>{dropdownMenu.title}</Link> 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../AriTechsResource/Logo/logo-updated.jpg';
+import logo from '../../AriTechsResource/Logo/logo-transparent.png';
 
 const Footer = () => {
     return (
