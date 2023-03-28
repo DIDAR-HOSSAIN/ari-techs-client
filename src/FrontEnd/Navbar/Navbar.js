@@ -62,7 +62,7 @@ const Navbar = () => {
 
             {/* Submenu */}
             {menu?.dropdown?.length > 0 && (
-            <ul className = "bg-red-500 text-black" >
+            <ul className = "bg-white text-black" >
               {menu?.dropdown?.map(dropdownMenu =>(
           <li className="" key={dropdownMenu.id}>
                 <Link to={dropdownMenu.path}>{dropdownMenu.title}</Link> 
