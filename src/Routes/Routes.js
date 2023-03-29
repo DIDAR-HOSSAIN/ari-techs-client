@@ -61,7 +61,7 @@ const router = createBrowserRouter([
         children:[
             {
                 path: '/dashboard',
-                element: <ManageContacts></ManageContacts>
+                element: <AdminRoutes><ManageContacts></ManageContacts></AdminRoutes>
             },
             {
                 path: '/dashboard/update/:id',

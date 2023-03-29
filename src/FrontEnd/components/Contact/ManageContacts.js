@@ -18,11 +18,39 @@ const closeModal = () => {
     const {data: contacts = [], refetch } = useQuery({
         queryKey: ['contacts', user?.email],
         queryFn: async()=>{
-            const res = await fetch(url);
+            try{
+            const res = await fetch(url,{
+                headers:{
+                    authorization: `bearer ${localStorage.getItem('accessToken')}`
+                }
+            });
             const data = await res.json();
             return data;
+            }
+            catch(error){
+
+            }
         }
     })
+
+    // const {data: contacts, refetch} = useQuery({
+    //     queryKey: ['contacts'],
+    //     queryFn: async()=>{
+    //         try{
+    //         const res = await fetch('http://localhost:5000/contacts',{
+    //         headers:{
+    //             authorization: `bearer ${localStorage.getItem('accessToken')}`
+    //         }
+    //         });
+            
+    //         const data = await res.json();
+    //         return data;
+    //         }
+    //         catch(error){
+
+    //         }
+    //     }
+    // })
 
     const handleDeleteUser = contact =>{
         fetch(`http://localhost:5000/contacts/${contact._id}`,{
@@ -42,7 +70,7 @@ const closeModal = () => {
 
     return (
         <div>
-            <h1 className='text-3xl'>Manage Client Request</h1>
+            <h1 className='text-3xl'>Manage Client Request {contacts?.length}</h1>
             <div className="overflow-x-auto">
             <table className="table table-zebra w-full">
             <thead>
