@@ -33,25 +33,6 @@ const closeModal = () => {
         }
     })
 
-    // const {data: contacts, refetch} = useQuery({
-    //     queryKey: ['contacts'],
-    //     queryFn: async()=>{
-    //         try{
-    //         const res = await fetch('http://localhost:5000/contacts',{
-    //         headers:{
-    //             authorization: `bearer ${localStorage.getItem('accessToken')}`
-    //         }
-    //         });
-            
-    //         const data = await res.json();
-    //         return data;
-    //         }
-    //         catch(error){
-
-    //         }
-    //     }
-    // })
-
     const handleDeleteUser = contact =>{
         fetch(`http://localhost:5000/contacts/${contact._id}`,{
             method: 'DELETE',

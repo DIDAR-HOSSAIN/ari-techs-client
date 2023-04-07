@@ -40,11 +40,11 @@ const UpdateContact = () => {
 
             <input name="email" type="email" defaultValue={contact.email} className="input input-bordered input-lg w-full mb-2 max-w-full" />
             
-            <input name="mobile" type="text" defaultValue={contact.mobile} className="input input-bordered input-lg w-full mb-2 max-w-full" />
+            <input name="mobile" type="number" defaultValue={contact.mobile} className="input input-bordered input-lg w-full mb-2 max-w-full" />
 
             <textarea name="message" type="text" defaultValue={contact.message} className="textarea textarea-bordered w-full"></textarea>
             <br/>
-            <input type="submit" value="Submit" className="btn btn-primary mt-2 w-full" />
+            <input type="submit" value="Update" className="btn btn-primary mt-2 w-full" />
             </form>
             </div>
             </div>

@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../FrontEnd/components/Home/Home";
 import Main from "../FrontEnd/Layout/Main";
-import Services from "../FrontEnd/components/Services/Services";
+import Services from "../FrontEnd/components/ServiceCategories/Services/Services";
 import Slider from "../FrontEnd/Slider/Slider";
 import About from "../FrontEnd/components/About/About";
 import Login from "../BackEnd/Auth/User/Login/Login";
@@ -14,6 +14,10 @@ import AdminRoutes from "./AdminRoutes";
 import ManageContacts from "../FrontEnd/components/Contact/ManageContacts";
 import CreateContact from "../FrontEnd/components/Contact/CreateContact";
 import UpdateContact from "../FrontEnd/components/Contact/UpdateContact";
+import CreateService from "../FrontEnd/components/ServiceCategories/Services/CreateService";
+import ManageServices from "../FrontEnd/components/ServiceCategories/Services/ManageServices";
+import UpdateService from "../FrontEnd/components/ServiceCategories/Services/UpdateService";
+import WhoWeAre from "../FrontEnd/components/WhoWeAre/WhoWeAre";
 
 
 
@@ -26,6 +30,10 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>
+            },
+            {
+                path: '/whoWeAre',
+                element: <WhoWeAre></WhoWeAre>
             },
             {
                 path: '/slider',
@@ -71,7 +79,20 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/users',
                 element: <AdminRoutes><AllUser></AllUser></AdminRoutes>
-            }
+            },
+            {
+                path: '/dashboard/createService',
+                element: <CreateService></CreateService>
+            },
+            {
+                path: '/dashboard/manageService',
+                element: <ManageServices></ManageServices>
+            },
+            {
+                path: '/dashboard/updateService/:id',
+                element: <UpdateService></UpdateService>,
+                loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+            },
         ]
     }
     

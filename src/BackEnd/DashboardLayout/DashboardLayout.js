@@ -13,18 +13,21 @@ const DashboardLayout = () => {
             <Navbar></Navbar>
             <div className="drawer drawer-mobile">
             <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content">
+            <div className="drawer-content bg-slate-200">
                 <Outlet></Outlet>
             
             </div> 
-            <div className="drawer-side">
+            <div className="drawer-side bg-orange-200">
                 <label htmlFor="dashboard-drawer" className="drawer-overlay"></label> 
                 <ul className="menu p-4 w-80 text-base-content">
                 
                 <li><Link to= "/dashboard">Dashboard</Link></li>
+                <li><Link to="/dashboard/createService">Add Service</Link></li>
+                <li><Link to="/dashboard/manageService">Manage Service</Link></li>
+
                 {
                     isAdmin && <>
-                    <li><Link to="/dashboard/users">All Users</Link></li>
+                    <li><Link to="/dashboard/users">Manage Users</Link></li>
                     <li><Link to="/dashboard">Manage Contacts</Link></li>
                     </>
                 }

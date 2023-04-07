@@ -1,6 +1,6 @@
 import React from 'react';
 // import Slider from '../../Slider/Slider';
-import Services from '../Services/Services';
+import Services from '../ServiceCategories/Services/Services';
 
 const Home = () => {
     return (

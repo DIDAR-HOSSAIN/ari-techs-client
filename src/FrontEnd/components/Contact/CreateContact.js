@@ -19,7 +19,7 @@ const navigate = useNavigate();
                      method: 'POST',
                      headers: {
                          'content-type': 'application/json',
-                         authorization: `bearer ${localStorage.getItem('accessToken')}`
+                        //  authorization: `bearer ${localStorage.getItem('accessToken')}`
                      },
                      body: JSON.stringify(contacts)
                  })
@@ -32,19 +32,21 @@ const navigate = useNavigate();
     }
 
     return (
-            <div className="h-96" style={{ backgroundImage: "url(" + contactBg + ")" }}>
+            <div className="h-auto" style={{ backgroundImage: "url(" + contactBg + ")" }}>
             <br/>
-            <div className="w-6/12 mx-auto">
-            <form onSubmit={handleSubmit} className=''>
-            <input name="name" type="text" placeholder="Enter Your Name" className="input input-bordered input-lg w-full mb-2 max-w-full" required />
+            <h1 className='text-center font-semibold text-3xl'>Get in charge of your IT.</h1>
+            <p className='text-center font-semibold text-lg'>Fill out the contact form and someone from out team will be in touch</p>
+            <div className="lg:w-[720px] mx-auto">
+            <form onSubmit={handleSubmit}>
+            <input name="name" type="text" placeholder="Enter your name" className="input input-bordered input-lg w-full mb-2 max-w-full" required />
 
-            <input name="email" type="email" placeholder="Enter Your Email" className="input input-bordered input-lg w-full mb-2 max-w-full" required />
+            <input name="email" type="email" placeholder="Enter your email" className="input input-bordered input-lg w-full mb-2 max-w-full" required />
             
-            <input name="mobile" type="number" placeholder="Enter Your Mobile No" className="input input-bordered input-lg w-full mb-2 max-w-full" required />
+            <input name="mobile" type="number" placeholder="Enter your mobile no" className="input input-bordered input-lg w-full mb-2 max-w-full" required />
 
-            <textarea name="message" className="textarea textarea-bordered input-lg w-full required" placeholder="Message"></textarea>
+            <textarea name="message" className="textarea textarea-bordered input-lg h-48 w-full required" placeholder="Tell us about your company"></textarea>
             <br/>
-            <input type="submit" value="Submit" className="btn btn-primary mt-2 w-full" />
+            <input type="submit" value="Send Message" className="btn btn-primary mt-2 w-full" />
             </form>
             </div>
             </div>
