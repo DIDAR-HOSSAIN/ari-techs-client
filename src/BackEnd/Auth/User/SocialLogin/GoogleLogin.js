@@ -1,76 +1,94 @@
-import React, { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, {
+  useContext,
+  useState
+} from 'react';
+import {
+  useNavigate
+} from 'react-router-dom';
 import useToken from '../../../../hooks/useToken';
-import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import {
+  AuthContext
+} from '../../contexts/AuthProvider/AuthProvider';
 
 const GoogleLogin = () => {
-     const {googleSignIn, updateUser} = useContext(AuthContext);
-     const [createdUserEmail, setCreatedUserEmail] = useState('');
-     const [token] = useToken(createdUserEmail);
-     const navigate = useNavigate();
+  const {
+    googleSignIn,
+    updateUser
+  } = useContext(AuthContext);
+  const [createdUserEmail, setCreatedUserEmail] = useState('');
+  const [token] = useToken(createdUserEmail);
+  const navigate = useNavigate();
 
-     const handleGoogleSignIn = ()=>{
-      googleSignIn()
-        .then(result => {
-            const user = result.user;
-            console.log(user);
-            
-             const userInfo = {
-              displayName: user.name
-            }
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then(result => {
+        const user = result.user;
+        console.log(user);
 
-            updateUser(userInfo)
-            .then(()=>{
-              saveUserToDb(user.displayName, user.email);
-              
-            })
-            
-            const currentUser = {
-                email: user.email
-            } 
-            
-            fetch('http://localhost:5000/jwt', {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(currentUser)
-                })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    localStorage.setItem('accessToken', data.token);
-                    navigate('/')
-                  
-                });
+        const userInfo = {
+          displayName: user.name
+        }
 
-        })
-        .catch(err => console.error(err))
-    }
+        updateUser(userInfo)
+          .then(() => {
+            saveUserToDb(user.displayName, user.email);
 
-    const saveUserToDb = (name, email)=>{
-      const user = {name, email};
-      fetch('http://localhost:5000/users',{
-          method: 'POST',
-          headers: {
-            'content-type' : 'application/json'
-          },
-          body: JSON.stringify(user)
+          })
+
+        const currentUser = {
+          email: user.email
+        }
+
+        fetch('https://ari-techs-server.vercel.app/jwt', {
+            method: 'POST',
+            headers: {
+              'content-type': 'application/json'
+            },
+            body: JSON.stringify(currentUser)
+          })
+          .then(res => res.json())
+          .then(data => {
+            console.log(data);
+            localStorage.setItem('accessToken', data.token);
+            navigate('/')
+
+          });
+
+      })
+      .catch(err => console.error(err))
+  }
+
+  const saveUserToDb = (name, email) => {
+    const user = {
+      name,
+      email
+    };
+    fetch('https://ari-techs-server.vercel.app/users', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify(user)
       })
       .then(res => res.json())
-      .then(data=>{
+      .then(data => {
         setCreatedUserEmail(email);
 
       })
-    }
+  }
 
-    return (
-        <div>
-            <p className = 'text-center form-control mt-2' >
-                <button onClick={handleGoogleSignIn} className='btn btn-outline mb-4'>Login with Google</button>
-            </p>
-        </div>
-    );
+  return ( <
+    div >
+    <
+    p className = 'text-center form-control mt-2' >
+    <
+    button onClick = {
+      handleGoogleSignIn
+    }
+    className = 'btn btn-outline mb-4' > Login with Google < /button> <
+    /p> <
+    /div>
+  );
 };
 
 export default GoogleLogin;

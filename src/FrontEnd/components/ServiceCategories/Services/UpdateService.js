@@ -14,7 +14,7 @@ const UpdateService = () => {
             const services = {title, description};
             console.log(services);
 
-            fetch(`http://localhost:5000/services/${service._id}`, {
+            fetch(`https://ari-techs-server.vercel.app/services/${service._id}`, {
                      method: 'PUT',
                      headers: {
                          'content-type': 'application/json',

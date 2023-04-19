@@ -85,8 +85,14 @@ const Navbar = () => {
       </li>
           ))}
     </ul>
+    
   </div>
   <div className="navbar-end">
+    {user?.email &&
+    <label htmlFor="dashboard-drawer" tabIndex={0} className="btn btn-ghost md:hidden lg:hidden">
+        <Bars3Icon className = "h-12 w-12 text-black-500" />
+      </label>
+      }
     <div className="dropdown dropdown-end">
       <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
@@ -94,6 +100,7 @@ const Navbar = () => {
         </div>
       </label>
       <ul tabIndex={0} className="mt-3 p-2 menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+        <li><Link to= "/dashboard">Dashboard</Link></li>
         <li>
           <Link to={""} className="justify-between">
             Profile

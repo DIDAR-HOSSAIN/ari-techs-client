@@ -74,7 +74,7 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/update/:id',
                 element: <UpdateContact></UpdateContact>,
-                loader: ({params}) => fetch(`http://localhost:5000/contacts/${params.id}`)
+                loader: ({params}) => fetch(`https://ari-techs-server.vercel.app/contacts/${params.id}`)
             },
             {
                 path: '/dashboard/users',
@@ -91,7 +91,7 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/updateService/:id',
                 element: <UpdateService></UpdateService>,
-                loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({params}) => fetch(`https://ari-techs-server.vercel.app/services/${params.id}`)
             },
         ]
     }

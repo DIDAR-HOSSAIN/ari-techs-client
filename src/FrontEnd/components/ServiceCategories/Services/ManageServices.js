@@ -14,7 +14,7 @@ const ManageServices = () => {
         queryKey:['services'],
         queryFn: async ()=>{
             try{
-                const res = await fetch('http://localhost:5000/services',{
+                const res = await fetch('https://ari-techs-server.vercel.app/services',{
                     headers:{
                         authorization: `bearer ${localStorage.getItem('accessToken')}`
                     }
@@ -29,7 +29,7 @@ const ManageServices = () => {
     });
 
     const handleDeleteUser = service => {
-        fetch(`http://localhost:5000/services/${service._id}`,{
+        fetch(`https://ari-techs-server.vercel.app/services/${service._id}`,{
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`

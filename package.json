@@ -2,6 +2,7 @@
   "name": "ari-techs-client",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://ari-techs-server.vercel.app/",
   "dependencies": {
     "@heroicons/react": "^2.0.15",
     "@tanstack/react-query": "^4.26.1",

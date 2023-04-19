@@ -30,7 +30,7 @@ const CreateService = () => {
             
             //save doctor information to database
 
-                 fetch('http://localhost:5000/services', {
+                 fetch('https://ari-techs-server.vercel.app/services', {
                      method: 'POST',
                      headers: {
                          'content-type': 'application/json',

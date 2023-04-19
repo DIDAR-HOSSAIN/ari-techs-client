@@ -9,33 +9,33 @@ const DashboardLayout = () => {
     const {user} = useContext(AuthContext);
     const [isAdmin] = useAdmin(user?.email);
     return (
-        <div>
-            <Navbar></Navbar>
-            <div className="drawer drawer-mobile">
-            <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content bg-slate-200">
-                <Outlet></Outlet>
-            
-            </div> 
-            <div className="drawer-side bg-orange-200">
-                <label htmlFor="dashboard-drawer" className="drawer-overlay"></label> 
-                <ul className="menu p-4 w-80 text-base-content">
-                
-                <li><Link to= "/dashboard">Dashboard</Link></li>
-                <li><Link to="/dashboard/createService">Add Service</Link></li>
-                <li><Link to="/dashboard/manageService">Manage Service</Link></li>
+    <div className="">
+    <Navbar></Navbar>
+    <div className="drawer drawer-mobile">
+    <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
+    <div className="drawer-content">
+        <Outlet></Outlet>
+    </div> 
 
-                {
-                    isAdmin && <>
-                    <li><Link to="/dashboard/users">Manage Users</Link></li>
-                    <li><Link to="/dashboard">Manage Contacts</Link></li>
-                    </>
-                }
-                </ul>
-            
-            </div>
-            </div>
-        </div>
+    <div className="drawer-side bg-slate-200">
+        <label htmlFor="dashboard-drawer" className="drawer-overlay"></label> 
+        <ul className="menu p-4 w-80 text-base-content">
+      
+        <li><Link to= "/dashboard">Dashboard</Link></li>
+        <li><Link to="/dashboard/createService">Add Service</Link></li>
+        <li><Link to="/dashboard/manageService">Manage Service</Link></li>
+
+         {
+            isAdmin && <>
+            <li><Link to="/dashboard/users">Manage Users</Link></li>
+            <li><Link to="/dashboard">Manage Contacts</Link></li>
+            </>
+        }
+    </ul>
+  
+  </div>
+</div>
+</div>
     );
 };
 

@@ -15,7 +15,7 @@ const navigate = useNavigate();
             const contacts = {name, email, mobile, message};
             console.log(contacts);
 
-            fetch('http://localhost:5000/contacts', {
+            fetch('https://ari-techs-server.vercel.app/contacts', {
                      method: 'POST',
                      headers: {
                          'content-type': 'application/json',
@@ -32,7 +32,7 @@ const navigate = useNavigate();
     }
 
     return (
-            <div className="h-auto" style={{ backgroundImage: "url(" + contactBg + ")" }}>
+            <div className="h-auto mx-1" style={{ backgroundImage: "url(" + contactBg + ")" }}>
             <br/>
             <h1 className='text-center font-semibold text-3xl'>Get in charge of your IT.</h1>
             <p className='text-center font-semibold text-lg'>Fill out the contact form and someone from out team will be in touch</p>

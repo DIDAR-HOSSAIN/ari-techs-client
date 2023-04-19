@@ -15,7 +15,7 @@ const UpdateContact = () => {
             const contacts = {name, email, mobile, message};
             console.log(contacts);
 
-            fetch(`http://localhost:5000/contacts/${contact._id}`, {
+            fetch(`https://ari-techs-server.vercel.app/contacts/${contact._id}`, {
                      method: 'PUT',
                      headers: {
                          'content-type': 'application/json',
