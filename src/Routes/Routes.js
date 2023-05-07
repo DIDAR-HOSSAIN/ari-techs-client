@@ -18,6 +18,7 @@ import CreateService from "../FrontEnd/components/ServiceCategories/Services/Cre
 import ManageServices from "../FrontEnd/components/ServiceCategories/Services/ManageServices";
 import UpdateService from "../FrontEnd/components/ServiceCategories/Services/UpdateService";
 import WhoWeAre from "../FrontEnd/components/WhoWeAre/WhoWeAre";
+import ServiceDetail from "../FrontEnd/components/ServiceCategories/Services/ServiceDetail";
 
 
 
@@ -58,6 +59,13 @@ const router = createBrowserRouter([
             {
                 path: '/signup',
                 element: <SignUp></SignUp>
+            },
+            {
+                path: '/serviceDetail/:id',
+                element: <ServiceDetail></ServiceDetail>,
+                loader: ({params}) => fetch(`https://ari-techs-server.vercel.app/services/${params.id}`)
+                // loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+
             }
         ]
     },
