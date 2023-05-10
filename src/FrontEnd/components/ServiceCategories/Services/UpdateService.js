@@ -4,14 +4,15 @@ import { useLoaderData, useNavigate } from 'react-router-dom';
 
 const UpdateService = () => {
     const service = useLoaderData();
+    console.log("update service",service);
     const navigate = useNavigate();
     const handleUpdateService = event => {
             event.preventDefault();
             const form = event.target;
             const title = form.title.value;
             const description = form.description.value;
-            // const image = form.image.value;
-            const services = {title, description};
+            const image = form.image.value;
+            const services = {title, description, image};
             console.log(services);
 
             fetch(`https://ari-techs-server.vercel.app/services/${service._id}`, {
@@ -37,7 +38,7 @@ const UpdateService = () => {
 
             <input name="description" type="text" defaultValue={service.description} className="input input-bordered input-lg w-full mb-2 max-w-full" />
             
-           {/* <input type="file" defaultValue={service.image} className="file-input w-full max-w-xs" /> */}
+           <input name="image" type="text" defaultValue={service.image} className="input w-full max-w-xs" />
 
             <br/>
             <input type="submit" value="Update" className="btn btn-primary mt-2 w-full" />

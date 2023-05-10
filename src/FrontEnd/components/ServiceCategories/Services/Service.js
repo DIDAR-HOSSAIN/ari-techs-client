@@ -1,5 +1,4 @@
 import React from 'react';
-import service from "./service.css";
 import { Link } from 'react-router-dom';
 
 const Service = ({service}) => {

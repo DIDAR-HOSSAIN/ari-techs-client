@@ -24,7 +24,6 @@ const DashboardLayout = () => {
         <li><Link to= "/dashboard">Dashboard</Link></li>
         <li><Link to="/dashboard/createService">Add Service</Link></li>
         <li><Link to="/dashboard/manageService">Manage Service</Link></li>
-
          {
             isAdmin && <>
             <li><Link to="/dashboard/users">Manage Users</Link></li>
@@ -32,7 +31,6 @@ const DashboardLayout = () => {
             </>
         }
     </ul>
-  
   </div>
 </div>
 </div>

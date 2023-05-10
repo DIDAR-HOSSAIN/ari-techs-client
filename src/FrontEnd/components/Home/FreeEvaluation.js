@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const FreeEvaluation = () => {
     return (
-        <div className="hero min-h-screen min-h-max mt-4" style={{ backgroundImage: "url(" + getFreeEva + ")" }}>
+        <div className="hero min-h-min mt-4" style={{ backgroundImage: "url(" + getFreeEva + ")" }}>
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-center text-neutral-content">
             <div className="max-w-md">
@@ -19,3 +19,5 @@ const FreeEvaluation = () => {
 };
 
 export default FreeEvaluation;
+
+

@@ -67,7 +67,7 @@ const ManageServices = () => {
                     <td>
                     <div className="avatar">
                     <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                    <img src={service.image} alt="" />
+                    <img src={service?.image} alt="" />
                     </div>
                     </div>
                     </td>
