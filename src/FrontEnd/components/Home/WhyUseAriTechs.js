@@ -1,5 +1,5 @@
 import React from 'react';
-import WhyUseAriTechsBg from '../../../AriTechsResource/background-image/about-us-bg.png';
+import WhyUseAriTechsBg from '../../../AriTechsResource/background-image/headerBgWhyUse.jpg';
 import CategoryImg1 from '../../../AriTechsResource/wua/icons/clock-img.png';
 import CategoryImg2 from '../../../AriTechsResource/wua/icons/document-img.png';
 import CategoryImg3 from '../../../AriTechsResource/wua/icons/calender-img.png';

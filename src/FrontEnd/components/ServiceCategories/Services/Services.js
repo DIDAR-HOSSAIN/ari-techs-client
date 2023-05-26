@@ -1,5 +1,6 @@
 import React from 'react';
 import headerImage from '../../../../AriTechsResource/background-image/header-img.png';
+import headerImage2 from '../../../../AriTechsResource/background-image/header2bg.jpg';
 import Service from './Service';
 import { useQuery } from '@tanstack/react-query';
 
@@ -20,6 +21,17 @@ const Services = () => {
 
     return (
             <div className="">
+
+                <div className="hero h-[70vh]" style={{ backgroundImage: "url(" + headerImage2 + ")" }}>
+                <div className="hero-overlay bg-opacity-60"></div>
+                <div className="hero-content text-center text-neutral-content">
+                    <div className="max-w-4xl">
+                    <h1 className="mb-5 text-5xl font-bold">IT Consulting & Services</h1>
+                    <p className="mb-5 text-xl">We are New York based IT service provider. Our team of skilled and experienced IT professionals is dedicated to providing the highest quality services to meet all of your technology needs.</p>
+                    </div>
+                </div>
+                </div>
+
                 <div className="justify-center items-center grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
                     <div className='w-full'>
                     <h1 className="text-6xl font-bold text-blue-600 p-4">IT Consulting & Services</h1>
@@ -29,7 +41,6 @@ const Services = () => {
                         <img src={headerImage} className="" alt="" />
                     </div>
                 </div>
-                
 
             <div className="flex flex-col w-full border-opacity-50">
             <div className="divider text-blue-600 text-bold text-2xl">We Provide</div>

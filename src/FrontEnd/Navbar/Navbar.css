@@ -1,5 +1,5 @@
 /* for desktop avatar menu */
-.avatar-icon:hover > ul{
+.dropdown-end:hover > ul{
 display: block !important;
 }
 

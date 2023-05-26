@@ -47,7 +47,7 @@ const Navbar = () => {
       </ul>
       </label>
     </div>
-    <Link to={"/"}><img className='h-20' src={logo} alt='' /></Link>
+    <Link to={"/"}><img className='h-24' src={logo} alt='' /></Link>
   </div>
 
 {/* Desktop Menu */}
@@ -56,7 +56,7 @@ const Navbar = () => {
     <ul className="menu menu-horizontal px-1">
       {menus.length >0 &&
           menus.map((menu)=> (
-      <li className="text-black font-semibold group inline-block relative" key={menu.id}>
+      <li className="text-lg text-black font-semibold group inline-block relative" key={menu.id}>
             <Link to={menu.path}>{menu.title}</Link>
             {/* Submenu */}
             {menu?.dropdown?.length > 0 && (
@@ -79,13 +79,11 @@ const Navbar = () => {
         <Bars3Icon className = "h-12 w-12 text-black-500" />
       </label>
       }
-    <div className="dropdown dropdown-end">
-      <label tabIndex={0} className="avatar-icon btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
-          <img src="https://www.w3schools.com/w3images/avatar6.png" alt='' />
+    <div className="dropdown-end fixed">
+      <div className="avatar-icon w-10">
+          <img src="https://www.w3schools.com/w3images/avatar6.png" className='rounded-full' alt='' />
         </div>
-      
-      <ul tabIndex={0} className="avatar-menu mt-3 p-2 menu menu-compact dropdown-content bg-base-100 rounded-box w-52 top-8 normal-case">
+      <ul tabIndex={0} className="avatar-menu p-2 fixed top-16 right-1 w-52 normal-case">
         <li className=""><Link to= "/dashboard">Dashboard</Link></li>
         <li>
           <Link to={""} className="justify-between">
@@ -96,7 +94,7 @@ const Navbar = () => {
         
         {user?.email ?
         <>
-        <li><Link to={"/"} >User: {user?.email}</Link></li>     
+        <li><Link to={"/dashboard"} >User: {user?.email}</Link></li>     
         <li><button onClick={handleLogout} >Logout</button></li>
         </>
         :
@@ -107,7 +105,6 @@ const Navbar = () => {
         }     
         <li><Link to={""}>Settings</Link></li>     
       </ul>
-      </label>
     </div>
   </div>
 </div>
@@ -115,3 +112,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useLocation, useNavigate } from 'react-router-dom';
 import useToken from '../../../../hooks/useToken';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
-import GoogleLogin from '../SocialLogin/GoogleLogin';
 
 const Login = () => {
   const {login} = useContext(AuthContext);
@@ -58,7 +57,7 @@ const Login = () => {
               </label>
               <input name="password" type="password" placeholder="Password" className="input input-bordered" required />
               <label className="label">
-                <a href="/" className="label-text-alt link link-hover">Forgot password?</a>
+                <Link to= "/" className=""><button className="text-secondary text-lg label-text-alt link link-hover">Forgot password?</button></Link>
               </label>
             </div>
               <div className="form-control mt-6">
@@ -69,11 +68,11 @@ const Login = () => {
                   loginError && <p className='text-red-600'>{loginError}</p>
                 }
         
-            <p className='text-secondary'>New to doctor portal?<Link to ="/signup" className="label-text-alt link link-hover text-lg"> Create account</Link></p>
+            <p className='text-secondary'>New to Ari Techs Portal?<Link to ="/signup" className="label-text-alt link link-hover text-lg"> Create Account</Link></p>
           </div>
-          <div className="divider mt-0">OR</div>
         </form>
-        <GoogleLogin></GoogleLogin>
+          {/* <div className="divider mt-0">OR</div> */}
+        {/* <GoogleLogin></GoogleLogin> */}
     </div>
       </div>
     </div>

@@ -38,10 +38,12 @@ const UpdateService = () => {
 
             <input name="description" type="text" defaultValue={service.description} className="input input-bordered input-lg w-full mb-2 max-w-full" />
             
-           <input name="image" type="text" defaultValue={service.image} className="input w-full max-w-xs" />
-
+           <input name="image" type="file" className="inline input input-bordered w-full max-w-xs" />
+           <img src={service.image} alt='' className='w-20' />
+    
             <br/>
             <input type="submit" value="Update" className="btn btn-primary mt-2 w-full" />
+
             </form>
             </div>
             </div>

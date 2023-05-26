@@ -51,12 +51,12 @@ const CreateService = () => {
     }
 
     return (
-        <div>
-            <h1>Add Service...</h1>
+        <div className=''>
+            <h1 className='font-extrabold text-4xl text-accent'>Add Service Category</h1>
             <form onSubmit={handleSubmit(handleAddService)}>
             <div className="form-control w-full max-w-xs">
             <label className="label">
-                <span className="label-text">Title?</span>
+                <span className="label-text text-xl">Service Title?</span>
             </label>
             <input type="text" {...register("title")} placeholder="Title" className="input input-bordered w-full max-w-xs" />
             {errors.title && <p className='text-red-500'>errors.title.message</p>}
@@ -64,7 +64,7 @@ const CreateService = () => {
 
             <div className="form-control w-full max-w-xs">
             <label className="label">
-                <span className="label-text">Description?</span>
+                <span className="label-text text-xl">Description?</span>
             </label>
             <input type="text" {...register("description")} placeholder="Description" className="input input-bordered w-full max-w-xs" />
             {errors.description && <p className='text-red-500'><err></err>errors.description.message</p>}
@@ -72,7 +72,7 @@ const CreateService = () => {
 
           <div className="form-control w-full max-w-xs">
             <label className="label">
-                <span className="label-text">Image?</span>
+                <span className="label-text text-xl">Image?</span>
             </label>
             <input type="file" {...register("image")} className="input input-bordered w-full max-w-xs" />
             </div>

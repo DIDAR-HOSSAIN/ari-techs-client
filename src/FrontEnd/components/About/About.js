@@ -7,7 +7,7 @@ const About = () => {
             
             </h1>
 
-            <div className=" text-left m-10 text-justify">
+            <div className="m-10 text-justify ">
             <p className=''><strong>Our company offers a comprehensive range of IT services to help businesses of all sizes achieve their goals. Our Services include:</strong> </p>
 <br/>
             <p className=''><strong>Web Design:</strong> We provide professional and responsive web design services that are tailored to the unique needs of our clients. Our team of experts can create custom websites that are optimized

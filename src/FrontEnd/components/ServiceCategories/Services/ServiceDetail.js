@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const ServiceDetail = () => {
     const services = useLoaderData();
@@ -25,6 +25,9 @@ const ServiceDetail = () => {
             <div className="card-body bg-white rounded-b-2xl">
                 <h2 className="font-bold text-4xl text-center">{title}</h2>
                 <p className='text-2xl text-justify'>{description}</p>
+                <div className="card-actions justify-center">
+                    <Link to="/contact"><button className="btn bg-blue-600">Contact Us</button></Link>
+                </div>
             </div>
             </div>
         </div>
