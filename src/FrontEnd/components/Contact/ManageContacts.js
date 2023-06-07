@@ -34,7 +34,7 @@ const closeModal = () => {
     })
 
     const handleDeleteUser = contact =>{
-        fetch(`https://ari-techs-server.vercel.app/contacts/${contact._id}`,{
+        fetch(`https://ari-techs-server.vercel.app/contacts/${contact?._id}`,{
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -44,7 +44,7 @@ const closeModal = () => {
         .then(data =>{
             if(data.deletedCount > 0){
                 refetch();
-                toast.success(`Deleted ${contact.name} Successfully`)
+                toast.success(`Deleted ${contact?.name} Successfully`)
             }
         })
     }

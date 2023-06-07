@@ -81,9 +81,14 @@ const Navbar = () => {
       }
     <div className="dropdown-end fixed">
       <div className="avatar-icon w-10">
+        {
+          user?.photoURL ? 
+          <img src={user?.photoURL} className='rounded-full' alt='' />
+          :
           <img src="https://www.w3schools.com/w3images/avatar6.png" className='rounded-full' alt='' />
+        }
         </div>
-      <ul tabIndex={0} className="avatar-menu p-2 fixed top-16 right-1 w-52 normal-case">
+      <ul tabIndex={0} className="avatar-menu p-2 fixed top-[18] right-20 w-52 normal-case bg-red-500 text-white">
         <li className=""><Link to= "/dashboard">Dashboard</Link></li>
         <li>
           <Link to={""} className="justify-between">

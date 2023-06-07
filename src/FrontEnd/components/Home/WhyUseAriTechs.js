@@ -13,9 +13,9 @@ const WhyUseAriTechs = () => {
             <div className="gap-8 rounded-lg grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
 
             <div className="card-body rounded-b-2xl">
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center p-10">
             <div className="">
-                <img src={CategoryImg1} className="w-32 h-32" alt="" />
+                <img src={CategoryImg1} className="object-scale-down h-48 w-48" alt="" />
             </div>
             <div className="">
             <h2 className="font-bold text-xl text-blue-600">Fast Response Times</h2>
@@ -25,9 +25,9 @@ const WhyUseAriTechs = () => {
             </div>
 
             <div className="card-body rounded-b-2xl">
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center p-10">
             <div className="">
-                <img src={CategoryImg2} className="w-32 h-32" alt="" />
+                <img src={CategoryImg2} className="object-scale-down h-48 w-48" alt="" />
             </div>
             <div className="">
             <h2 className="font-bold text-xl text-blue-600">Qualified Techs</h2>
@@ -37,9 +37,9 @@ const WhyUseAriTechs = () => {
             </div>
 
             <div className="card-body rounded-b-2xl">
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center p-10">
             <div className="">
-                <img src={CategoryImg3} className="w-32 h-32" alt="" />
+                <img src={CategoryImg3} className="object-scale-down h-32 w-32" alt="" />
             </div>
             <div className="">
             <h2 className="font-bold text-xl text-blue-600">Years of Experience</h2>
@@ -49,9 +49,9 @@ const WhyUseAriTechs = () => {
             </div>
 
             <div className="card-body rounded-b-2xl">
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center p-10">
             <div className="">
-                <img src={CategoryImg4} className="w-32 h-32" alt="" />
+                <img src={CategoryImg4} className="object-scale-down h-48 w-48" alt="" />
             </div>
             <div className="">
             <h2 className="font-bold text-xl text-blue-600">Good Value</h2>

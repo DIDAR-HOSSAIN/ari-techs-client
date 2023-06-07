@@ -5,10 +5,10 @@ import {useNavigate} from 'react-router-dom';
 import {AuthContext} from '../../contexts/AuthProvider/AuthProvider';
 import useToken from '../../../../hooks/useToken';
 import { getAuth, sendEmailVerification } from 'firebase/auth';
+import GoogleLogin from '../SocialLogin/GoogleLogin';
 
 const SignUp = () => {
-  const {
-    createUser, updateUser} = useContext(AuthContext);
+  const {createUser, updateUser} = useContext(AuthContext);
   const [signUpError, setSignUpError] = useState('');
   const [createdUserEmail, setCreatedUserEmail] = useState('');
   const [token] = useToken(createdUserEmail);
@@ -17,6 +17,8 @@ const SignUp = () => {
   if (token) {
     navigate('/');
   }
+
+  const auth = getAuth();
 
   const handleRegister = event => {
     setSignUpError('');
@@ -47,8 +49,7 @@ const SignUp = () => {
         setSignUpError(error.message)
       });
   }
-
-  const auth = getAuth();
+  
   const emailVerification = ()=>{
     sendEmailVerification(auth.currentUser)
     .then(()=>{
@@ -85,7 +86,7 @@ const SignUp = () => {
     </div> 
     <div className = "form-control">
     <label className = "label"><span className = "label-text"> Email </span> </label> 
-    <input name = "email"type = "email" placeholder = "Email" className = "input input-bordered" required />
+    <input name = "email" type = "email" placeholder = "Email" className = "input input-bordered" required />
     </div> 
     <div className = "form-control">
     <label className = "label"> <span className = "label-text" > Password </span> </label> 
@@ -100,8 +101,8 @@ const SignUp = () => {
     <p className = 'text-secondary' > Already have an Account ? <Link to = "/login" className = "label-text-alt link link-hover text-lg"> Please Login </Link></p>
     </div> 
     </form> 
-    {/* <div className = "divider mt-0" > OR </div>  */}
-    {/* <GoogleLogin > </GoogleLogin>  */}
+    <div className = "divider mt-0" > OR </div> 
+    <GoogleLogin> </GoogleLogin> 
     </div> 
     </div> 
     </div>

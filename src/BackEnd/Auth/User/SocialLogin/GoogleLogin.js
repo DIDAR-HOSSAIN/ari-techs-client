@@ -1,14 +1,7 @@
-import React, {
-  useContext,
-  useState
-} from 'react';
-import {
-  useNavigate
-} from 'react-router-dom';
+import React, {useContext, useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 import useToken from '../../../../hooks/useToken';
-import {
-  AuthContext
-} from '../../contexts/AuthProvider/AuthProvider';
+import {AuthContext} from '../../contexts/AuthProvider/AuthProvider';
 
 const GoogleLogin = () => {
   const {
@@ -77,17 +70,13 @@ const GoogleLogin = () => {
       })
   }
 
-  return ( <
-    div >
-    <
-    p className = 'text-center form-control mt-2' >
-    <
-    button onClick = {
-      handleGoogleSignIn
-    }
-    className = 'btn btn-outline mb-4' > Login with Google < /button> <
-    /p> <
-    /div>
+  return ( 
+    <div>
+    <p className = 'text-center form-control mt-2 btn btn-outline mb-4'>
+    <button onClick = {handleGoogleSignIn}>
+     Login with Google </button> 
+    </p> 
+    </div>
   );
 };
 

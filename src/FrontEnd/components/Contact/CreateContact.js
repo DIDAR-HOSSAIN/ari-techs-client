@@ -1,7 +1,7 @@
 import React from 'react';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-import contactBg from '../../../AriTechsResource/background-image/contact-bg.png';
+import contactBg from '../../../AriTechsResource/background-image/contact-bg.jpg';
 
 const CreateContact = () => {
 const navigate = useNavigate();
@@ -32,11 +32,11 @@ const navigate = useNavigate();
     }
 
     return (
-            <div className="h-auto mx-1" style={{ backgroundImage: "url(" + contactBg + ")" }}>
+            <div className="h-auto mx-1 bg-no-repeat" style= {{  backgroundImage: "url(" + contactBg + ")" }}>
             <br/>
             <h1 className='text-center font-semibold text-3xl'>Get in charge of your IT.</h1>
             <p className='text-center font-semibold text-lg'>Fill out the contact form and someone from out team will be in touch</p>
-            <div className="lg:w-[720px] mx-auto">
+            <div className="lg:w-[500px] mx-auto">
             <form onSubmit={handleSubmit}>
             <input name="name" type="text" placeholder="Enter your name" className="input input-bordered input-lg w-full mb-2 max-w-full" required />
 
